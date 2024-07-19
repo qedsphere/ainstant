@@ -1,0 +1,34 @@
+{
+    "name": "ainstant",
+    "version": "1.0",
+    "description": "literally three commands, productivity or something ?",
+    "manifest_version": 2,
+    "commands": {
+        "do-thing": {
+         "suggested_key": {
+            "default": "Alt+G"
+         },
+      "description": "send 'do-thing' and stuff"
+      },
+      "do-thing-2": {
+         "suggested_key": {
+            "default": "Alt+D"
+         },
+      "description": "dothing2, docs"
+      },
+      "do-thing-3": {
+         "suggested_key": {
+            "default": "Alt+F"
+         },
+      "description": "dothing3, docs2"
+      }
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+       "matches": ["<all_urls>"],
+       "js": ["shortcut.js"]  
+    }],
+    "permissions": ["activeTab"]
+}
